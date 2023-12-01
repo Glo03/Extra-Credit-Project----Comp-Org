@@ -58,4 +58,11 @@
         ble $v0, 20, illegal_error  # Check for illegal numbers
         blt $v0, 21, input_N     # Check if N is greater than 20
         move $s2, $v0            # Save N in $s2
+    #Jumping to calculate the gcd
+        j calculate_gcd
+    #prompt the illegal number messages
+    illegal_error:
+        li $v0, 4
+        la $a0, error_msg
+        syscall
 
