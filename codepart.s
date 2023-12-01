@@ -71,4 +71,10 @@
         move $a0, $s0
         move $a1, $s1
         jal gcd
+        move $s3, $v0  # Save GCD in $s3
+
+        # Display the result
+        li $v0, 1
+        move $a0, $s3
+        syscall
 
