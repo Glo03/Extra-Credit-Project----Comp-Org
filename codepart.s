@@ -14,3 +14,9 @@
 
         move $t0, $a0         # Copy first number to $t0
         move $t1, $a1         # Copy second number to $t1
+
+    gcd_loop:
+        beq $t1, $zero, gcd_done   # If $t1 is 0, GCD is in $t0, exit loop
+        rem $t2, $t0, $t1          # $t2 = remainder of $t0 divided by $t1
+        move $t0, $t1              # $t0 = $t1
+        move $t1, $t2   
