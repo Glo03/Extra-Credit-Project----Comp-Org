@@ -19,4 +19,9 @@
         beq $t1, $zero, gcd_done   # If $t1 is 0, GCD is in $t0, exit loop
         rem $t2, $t0, $t1          # $t2 = remainder of $t0 divided by $t1
         move $t0, $t1              # $t0 = $t1
-        move $t1, $t2   
+        move $t1, $t2
+        j gcd_loop
+
+    gcd_done:
+        move $v0, $t0              # GCD is in $v0
+        jr $ra
