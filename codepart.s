@@ -65,4 +65,10 @@
         li $v0, 4
         la $a0, error_msg
         syscall
+        j main
+    calculate_gcd:
+        # Calculate GCD of L, M, and N
+        move $a0, $s0
+        move $a1, $s1
+        jal gcd
 
