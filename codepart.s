@@ -38,4 +38,9 @@
         ble $v0, 20, illegal_error  # Check for illegal numbers
         blt $v0, 21, input_L     # Check if L is greater than 20
         move $s0, $v0            # Save L in $s0
+    # Prompt for M
+    input_M:
+        li $v0, 4
+        la $a0, promptM
+        syscall
 
