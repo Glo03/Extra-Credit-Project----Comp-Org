@@ -25,3 +25,11 @@
     gcd_done:
         move $v0, $t0              # GCD is in $v0
         jr $ra
+
+    #program
+    main:
+        # Prompt for L
+    input_L:
+        li $v0, 4
+        la $a0, promptL
+        syscall
